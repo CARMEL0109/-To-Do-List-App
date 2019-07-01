@@ -1,0 +1,68 @@
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+       <meta charset="UTF-8"/>
+  <!--      <link th:replace="./fragments/bootstrap :: bootstrap"></link> -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    	<link rel="stylesheet" href="/custom.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="/custom.js"></script>
+   </head>
+  
+   <body>
+       <div class="container">
+       <div class="jumbotron">
+           <div class="container">
+    <h2>Hello!</h2>
+   <h3>It's a Beautiful Day.</h3>
+    <p> Here's Your 'To Do' List</p>
+
+ 
+<a th:href="@{/result}"></a>
+   			<table class = "table table-striped">       
+  
+  <div class="row"></div>
+ 
+  <tr>
+    <th>Id</th>
+     <th>Title </th>
+      <th>Description</th>
+       <th>CreatedBy</th>
+        <th>Status</th>
+    </tr>      
+
+			</tr> 
+			   <tr th:each="task: ${todoTasks}">
+   				<td th:text="${task.id}"></td>
+   				<td th:text="${task.title}"></td>
+					<td th:text="${task.description}"></td>
+					<td th:text="${task.createdBy}"></td>
+					<td th:text="${task.status}"></td>
+			</tr>	
+    		</table>
+    		 
+ 			</div>
+ 		
+				<div >
+    
+       <!-- Update Buttons -->
+       			<div >
+         				<a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
+						<a th:href="@{/todolist/result}"><button class="btn btn-warning">Update A Task</button></a>
+						<a th:href="@{/todolist/new}"><button class="btn btn-primary">Add a New Task</button></a>
+						<a th:href="@{/todolist/result}"><button class="btn btn-danger">Delete a Task</button></a>
+				</div>		
+     
+    </div>
+</div>
+</div>
+</div>
+<!-- </div> -->
+
+    <hr/>
+	
+	<script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>

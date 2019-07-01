@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+       <meta charset="UTF-8"/>
+  <!--      <link th:replace="./fragments/bootstrap :: bootstrap"></link> -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    	<link rel="stylesheet" href="/custom.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="/custom.js"></script>
+   </head>
+  
+   <body>
+       <div class="container">
+       <div class="jumbotron">
+           <div th:replace="./fragments/navbar :: navbar"></div>
+           
+           <div class="container">
+    <h1> Welcome to</h1>
+    <h1>Your 'To Do List' App</h1>
+    <hr/>
+
+  
+       <!-- Update Button -->
+   
+          <a th:href="@{/todolist/new}" th:method="get"><button type="submit" class="btn btn-primary">Start By Adding Tasks</button></a>
+   
+    </div>
+
+    <hr/>
+
+   <!--  <!-- Item Input Form -->
+    <!-- <div class="todoForm">
+      <form class="form-horizontal" role="form" th:action="@{/add}" th:object="${newitem}" method="POST">
+        <div class="form-group">
+          <label for="inputItemName" class="col-sm-2">Task Name</label>
+          <div class="col-sm-10">
+            <input type="text" th:field="*{name}" class="form-control" id="inputItemName" placeholder="Enter name"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputItemCategory" class="col-sm-2">Task Category</label>
+          <div class="col-sm-10">
+            <input type="text" th:field="*{category}" class="form-control" id="inputItemCategory" placeholder="Enter category"/>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Task</button>
+
+      </form> -->
+    </div> 
+<!-- </div>
+  </div> -->

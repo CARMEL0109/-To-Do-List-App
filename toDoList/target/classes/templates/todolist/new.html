@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+       <meta charset="UTF-8"/>
+  <!--      <link th:replace="./fragments/bootstrap :: bootstrap"></link> -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    	<link rel="stylesheet" href="/custom.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="/custom.js"></script>
+   </head>
+  
+   <body>
+       <div class="container">
+       <div class="jumbotron">
+           <div th:replace="./fragments/navbar :: navbar"></div>
+           
+           <div class="container">
+	
+	<p>Please use the form below to create a New 'To Do' Task:</p>
+ 	
+ 	<form action="#" th:action="@{'/todolist/new'}" th:object="${todoTask}" method="post">
+  
+  	 	<div class="form-group">
+ 			<input type="text" class="form-control" placeholder="Title..." th:value="${title}" name="title" />
+ 		</div>
+ 		
+ 		<div class="form-group">
+ 		
+ 			 <textarea rows = "3" cols = "82" type="text" class="form-control" placeholder="What is this task about..." th:value="${description}" name="description"></textarea> 
+ 		
+ 		</div>
+ 	
+ 		<div class="form-group">
+ 			<input type="text" class ="form-control" placeholder="Status" th:value="${status}" name="status" />
+ 		</div> 
+ 		<!-- <div class="form-group">
+ 			<input type="checkbox" class ="form-control" placeholder="Status" th:checked="${item.status} == true" />
+ 		</div>
+		 -->
+		
+		<button class="btn btn-primary">Add Task</button>
+</form>
+</div>
+</div>
+</div>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>
+</html>
